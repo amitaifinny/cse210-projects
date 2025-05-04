@@ -47,9 +47,5 @@ class Program
         int squaredNumber = SquareNumber(userNumber);
         
         DisplayResult(userName, squaredNumber);
-
-
-
-
     }
 }
