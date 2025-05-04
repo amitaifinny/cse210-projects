@@ -8,29 +8,48 @@ class Program
             Console.WriteLine("Welcome to the Program!");
         }
 
-        static void PromptUserName(string userName)
+        static string PromptUserName()
         {
-            Console.WriteLine($"What is your username");
+            Console.Write($"What is your username? ");
+            string name = Console.ReadLine();
+            
+            return name;
+            
         }
 
-        static void PromptUserNumber(int favoriteNumber)
+        static int PromptUserNumber()
         {
-            Console.WriteLine($"Your favorite number is: {favoriteNumber}");
+            Console.Write($"What is your favorite number? ");
+            int favoriteNumber = int.Parse(Console.ReadLine());
+            
+            return favoriteNumber;
         }
 
         static int SquareNumber(int integer)
         {
             int squared = integer * integer;
+            
             return squared;
         }
 
-        static void DisplayResult()
+        static void DisplayResult(string user, int squared)
         {
-            Console.WriteLine($"{PromptUserName} the square of your number is {SquareNumber}");
+            Console.WriteLine($"{user}, the square of your number is {squared}");
         }
     static void Main(string[] args)
     {
         DisplayWelcome();
+        
+        string userName = PromptUserName();
+
+        int userNumber = PromptUserNumber();
+
+        int squaredNumber = SquareNumber(userNumber);
+        
+        DisplayResult(userName, squaredNumber);
+
+
+
 
     }
 }
