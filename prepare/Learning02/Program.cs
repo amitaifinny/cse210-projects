@@ -23,9 +23,6 @@ class Program
         resume1._jobs.Add(job1);
         resume1._jobs.Add(job2);
         
-        job1.Display();
-        job2.Display();
-        
         resume1.Display();
 
     }
