@@ -1,4 +1,6 @@
 public class Journal
 {
-    // public List<JournalEntry> _entry = new List<JournalEntry>();
+    public List<Entry> _entry = new List<Entry>();
+
+    
 }
