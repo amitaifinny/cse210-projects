@@ -1,6 +1,19 @@
 public class Journal
 {
-    public List<Entry> _entry = new List<Entry>();
+    public List<Entry> _entries = new List<Entry>();
 
-    
+
+
+    public void DisplayEntries()
+    {
+        foreach (Entry entry in _entries)
+        {
+            entry.Display();
+        }
+    }
+
+    public void WriteToFile()
+    {
+        
+    } 
 }

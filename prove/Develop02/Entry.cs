@@ -7,6 +7,8 @@ public class Entry
     public string _entryDate;
     public string _entryPrompt;
 
+    public string _entryInput;
+
 
     public string GetDate()
     {
@@ -24,13 +26,21 @@ public class Entry
 
         return _entryPrompt;
 
-
     }
+
+    public string GetInput()
+    {
+        Console.WriteLine(ShowPrompt());
+        string input = Console.ReadLine();
+        _entryInput = input;
+        return _entryInput;
+    }
+
+
 
     public void Display()
     {
-        Console.WriteLine($"{GetDate()}: {ShowPrompt()}");
-        
+        Console.WriteLine($"Date: {GetDate()}- Prompt: {GetInput()}");
     }
 
 }
