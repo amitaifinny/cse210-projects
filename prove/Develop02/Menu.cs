@@ -29,6 +29,10 @@ public class Menu
                 case 2:
                     journal.DisplayEntries();
                     break;
+
+                case 4:
+                    journal.WriteToFile();
+                    break;
             }
         }
 

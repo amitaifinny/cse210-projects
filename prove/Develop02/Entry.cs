@@ -41,6 +41,11 @@ public class Entry
 
     }
 
+    public string CreateFileString()
+    {
+        return $"{_entryDate}#{_entryPrompt}#{_entryInput}";
+    }
+
     
 
 

@@ -19,6 +19,14 @@ public class Journal
 
     public void WriteToFile()
     {
+        using (StreamWriter outputFile = new StreamWriter("journal.txt"))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputFile.WriteLine($"{entry.CreateFileString()}");
+            }
 
+
+        }
     } 
 }
