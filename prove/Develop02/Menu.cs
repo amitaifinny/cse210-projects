@@ -30,6 +30,10 @@ public class Menu
                     journal.DisplayEntries();
                     break;
 
+                case 3:
+                    journal.ReadFromFile();
+                    break;
+
                 case 4:
                     journal.WriteToFile();
                     break;

@@ -1,7 +1,12 @@
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
+    private List<Entry> _entries = new List<Entry>();
 
+    private string GetFileName()
+    {
+        Console.Write("Input file name: ");
+        return Console.ReadLine();
+    }
 
 
     public void DisplayEntries()
@@ -19,7 +24,7 @@ public class Journal
 
     public void WriteToFile()
     {
-        using (StreamWriter outputFile = new StreamWriter("journal.txt"))
+        using (StreamWriter outputFile = new StreamWriter(GetFileName()))
         {
             foreach (Entry entry in _entries)
             {
@@ -28,5 +33,21 @@ public class Journal
 
 
         }
-    } 
+    }
+
+    public void ReadFromFile()
+    {
+        string[] lines = System.IO.File.ReadAllLines(GetFileName());
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split('#');
+            string date = parts[0];
+            string prompt = parts[1];
+            string input = parts[2];
+
+            Entry entry = new Entry();
+            entry.SetAllData(date, prompt, input);
+            AddEntry(entry);
+        }
+    }
 }

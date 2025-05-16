@@ -4,15 +4,15 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
-    public string _entryDate;
-    public string _entryPrompt;
+    private string _entryDate;
+    private string _entryPrompt;
 
-    public string _entryInput;
-
-
+    private string _entryInput;
 
 
-    public void SetDate()
+
+
+    private void SetDate()
     {
         DateTime theCurrentTime = DateTime.Now;
         _entryDate = theCurrentTime.ToShortDateString();
@@ -21,7 +21,7 @@ public class Entry
 
     }
 
-    public string GetPrompt()
+    private string GetPrompt()
     {
         PromptGenerator generator = new PromptGenerator();
         _entryPrompt = generator.GetPrompt();
@@ -44,6 +44,13 @@ public class Entry
     public string CreateFileString()
     {
         return $"{_entryDate}#{_entryPrompt}#{_entryInput}";
+    }
+
+    public void SetAllData(string date, string prompt, string input)
+    {
+        _entryDate = date;
+        _entryPrompt = prompt;
+        _entryInput = input;
     }
 
     
