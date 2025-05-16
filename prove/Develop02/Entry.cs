@@ -12,12 +12,12 @@ public class Entry
 
 
 
-    public string GetDate()
+    public void SetDate()
     {
         DateTime theCurrentTime = DateTime.Now;
         _entryDate = theCurrentTime.ToShortDateString();
 
-        return _entryDate;
+        // return _entryDate;
 
     }
 
@@ -32,6 +32,7 @@ public class Entry
 
     public string GetInput()
     {
+        SetDate();
         string prompt = GetPrompt();
         Console.Write(prompt);
         _entryInput = Console.ReadLine();

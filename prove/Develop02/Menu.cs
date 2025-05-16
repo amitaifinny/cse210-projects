@@ -5,6 +5,7 @@ public class Menu
     int _userInput;
     public void MakeMenu()
     {
+        Journal journal = new Journal();
         while (_userInput != 5)
         {
             Console.WriteLine("Please select one of the following: ");
@@ -22,12 +23,11 @@ public class Menu
                 case 1:
                     Entry entry = new Entry();
                     entry.GetInput();
-
+                    journal.AddEntry(entry);
                     break;
 
                 case 2:
-                    Journal display = new Journal();
-                    display.DisplayEntries();
+                    journal.DisplayEntries();
                     break;
             }
         }
