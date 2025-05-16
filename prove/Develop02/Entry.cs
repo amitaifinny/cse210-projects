@@ -30,7 +30,7 @@ public class Entry
 
     }
 
-    public string GetInput()
+    public string SetInput()
     {
         SetDate();
         string prompt = GetPrompt();

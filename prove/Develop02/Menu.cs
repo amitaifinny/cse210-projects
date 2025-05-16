@@ -22,7 +22,7 @@ public class Menu
             {
                 case 1:
                     Entry entry = new Entry();
-                    entry.GetInput();
+                    entry.SetInput();
                     journal.AddEntry(entry);
                     break;
 
