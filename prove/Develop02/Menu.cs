@@ -22,6 +22,12 @@ public class Menu
                 case 1:
                     Entry entry = new Entry();
                     entry.GetInput();
+
+                    break;
+
+                case 2:
+                    Journal display = new Journal();
+                    display.DisplayEntries();
                     break;
             }
         }

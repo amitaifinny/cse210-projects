@@ -1,6 +1,6 @@
 public class PromptGenerator
 {
-    List<string> _prompts = new List<string>()
+    private string[] _prompts = 
     {
         "What is a small joy you experienced today?",
         "Describe a person who inspires you and why.",
@@ -23,13 +23,13 @@ public class PromptGenerator
         "Write about a time when you had to make a difficult decision.",
         "What is a question you are currently pondering?"
     };
-    int _randomIndex;
+
 
     public string GetPrompt()
     {
         Random random = new Random();
 
-        _randomIndex = random.Next(_prompts.Count);
+        int _randomIndex = random.Next(_prompts.Length);
 
         return _prompts[_randomIndex];
     }

@@ -10,18 +10,20 @@ public class Entry
     public string _entryInput;
 
 
+
+
     public string GetDate()
     {
         DateTime theCurrentTime = DateTime.Now;
-        string _entryDate = theCurrentTime.ToShortDateString();
+        _entryDate = theCurrentTime.ToShortDateString();
+
         return _entryDate;
 
     }
 
-    public string ShowPrompt()
+    public string GetPrompt()
     {
         PromptGenerator generator = new PromptGenerator();
-
         _entryPrompt = generator.GetPrompt();
 
         return _entryPrompt;
@@ -30,17 +32,22 @@ public class Entry
 
     public string GetInput()
     {
-        Console.WriteLine(ShowPrompt());
-        string input = Console.ReadLine();
-        _entryInput = input;
+        string prompt = GetPrompt();
+        Console.Write(prompt);
+        _entryInput = Console.ReadLine();
+
         return _entryInput;
+
     }
+
+    
 
 
 
     public void Display()
     {
-        Console.WriteLine($"Date: {GetDate()}- Prompt: {GetInput()}");
+        Console.WriteLine($"Date: {_entryDate} - Prompt: {_entryPrompt}");
+        Console.WriteLine(_entryInput);
     }
 
 }

@@ -8,17 +8,16 @@ using System.Collections;
     {
     static void Main(string[] args)
     {
-        string entryDate = DateTime.Now.ToString("yyyy-MM-dd");
-        Console.WriteLine(entryDate);
-        // Circle myCircle = new Circle();
-        // myCircle.SetRadius(10);
-        // Console.WriteLine($"{myCircle.GetRadius()}");
-        // Circle myCircle2 = new Circle();
-        // myCircle2.SetRadius(20);
-        // Console.WriteLine($"{myCircle2.GetRadius()}");
-        // Console.WriteLine($"{myCircle.GetArea()}");
-        // Console.WriteLine($"{myCircle2.GetArea()}");
-        //         private double _radius;
+        
+        Circle myCircle = new Circle();
+        myCircle.SetRadius(10);
+        Console.WriteLine($"{myCircle.GetRadius()}");
+        Circle myCircle2 = new Circle();
+        myCircle2.SetRadius(20);
+        Console.WriteLine($"{myCircle2.GetRadius()}");
+        Console.WriteLine($"{myCircle.GetArea()}");
+        Console.WriteLine($"{myCircle2.GetArea()}");
+                // private double _radius;
 
         //         public void SetRadius(double radius)
         //         {
