@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 using System.Security.Cryptography.X509Certificates;
@@ -8,7 +9,6 @@ public class Entry
     private string _entryPrompt;
 
     private string _entryInput;
-
 
 
 
@@ -34,7 +34,7 @@ public class Entry
     {
         SetDate();
         string prompt = GetPrompt();
-        Console.Write(prompt);
+        Console.WriteLine(prompt);
         _entryInput = Console.ReadLine();
 
         return _entryInput;
@@ -52,9 +52,6 @@ public class Entry
         _entryPrompt = prompt;
         _entryInput = input;
     }
-
-    
-
 
 
     public void Display()
