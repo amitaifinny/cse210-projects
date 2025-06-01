@@ -30,7 +30,7 @@ public class Reference
         {
             Console.WriteLine($"{_book} {_chapter}:{_startVerse}");
         }
-        else if (_endVerse != -1)
+        else
         {
             Console.WriteLine($"{_book} {_chapter}:{_startVerse}-{_endVerse}");
         }
