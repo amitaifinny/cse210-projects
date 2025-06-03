@@ -50,7 +50,7 @@ public class Word
 
     public void DisplayWord()
     {
-        Console.WriteLine(GetRenderedWord());
+        Console.Write(GetRenderedWord());
     }
 
 }

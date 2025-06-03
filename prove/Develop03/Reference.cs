@@ -28,11 +28,11 @@ public class Reference
     {
         if (_endVerse == -1)
         {
-            Console.WriteLine($"{_book} {_chapter}:{_startVerse}");
+            Console.Write($"{_book} {_chapter}:{_startVerse} ");
         }
         else
         {
-            Console.WriteLine($"{_book} {_chapter}:{_startVerse}-{_endVerse}");
+            Console.Write($"{_book} {_chapter}:{_startVerse}-{_endVerse} ");
         }
     }
 }
