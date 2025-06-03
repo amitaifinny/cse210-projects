@@ -1,10 +1,11 @@
+using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.CompilerServices;
 
 public class Scripture
 {
-    List<Word> _words = new List<Word>();
-    Reference _reference;
+    private List<Word> _words = new List<Word>();
+    private Reference _reference;
 
     public Scripture(Reference reference, string text)
     {
@@ -57,22 +58,56 @@ public class Scripture
             return false;
         }
 
-        int wordCounter = 3;
+        List<Word> unHiddenWords = new List<Word>();
 
-        // int wordsHiddenThisRound = 0;
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                unHiddenWords.Add(word);
+            }
+        }
+
+        int wordCounter = 3;
+        int wordsHiddenThisRound = 0;
+
+        if (unHiddenWords.Count == 0)
+        {
+            return false;
+        }
 
         for (int i = 0; i < wordCounter; i++)
         {
-            int randomIndex = random.Next(0, _words.Count);
-            Word selectedWord = _words[randomIndex];
-
-            if (!selectedWord.IsHidden())
+            if (unHiddenWords.Count == 0)
             {
-                selectedWord.Hide();
-                // wordsHiddenThisRound++;
+                break;
             }
+
+            int randomIndex = random.Next(0, unHiddenWords.Count);
+
+            Word selectedWord = unHiddenWords[randomIndex];
+
+
+            selectedWord.Hide();
+
+            wordsHiddenThisRound++;
+
+            unHiddenWords.RemoveAt(randomIndex);
+    
         }
-        return true;
+        return wordsHiddenThisRound > 0;
+        // for (int i = 0; i < wordCounter; i++)
+        //     {
+        //         int randomIndex = random.Next(0, _words.Count);
+        //         Word selectedWord = _words[randomIndex];
+
+        //         if (!selectedWord.IsHidden())
+        //         {
+        //             selectedWord.Hide();
+        //             // wordsHiddenThisRound++;
+        //         }
+        //     }
+        // return true;
         
     }
 }
