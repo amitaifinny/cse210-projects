@@ -87,7 +87,6 @@ public class Scripture
 
             Word selectedWord = unHiddenWords[randomIndex];
 
-
             selectedWord.Hide();
 
             wordsHiddenThisRound++;
