@@ -33,7 +33,7 @@ public class Scripture
             word.DisplayWord();
             Console.Write(" ");
         }
-
+        Console.WriteLine();
     }
     Random random = new Random();
     private int NumberOfHiddenWords()
@@ -59,7 +59,7 @@ public class Scripture
 
         int wordCounter = 3;
 
-        int wordsHiddenThisRound = 0;
+        // int wordsHiddenThisRound = 0;
 
         for (int i = 0; i < wordCounter; i++)
         {
@@ -69,7 +69,7 @@ public class Scripture
             if (!selectedWord.IsHidden())
             {
                 selectedWord.Hide();
-                wordsHiddenThisRound++;
+                // wordsHiddenThisRound++;
             }
         }
         return true;
