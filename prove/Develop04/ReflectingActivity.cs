@@ -67,7 +67,8 @@ public class ReflectingActivity : Activity
 
             Console.WriteLine();
         }
-    
+
+        Console.WriteLine();
         DisplayEnding();
     }
 }
