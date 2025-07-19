@@ -3,7 +3,7 @@ public class CheckListGoal : Goal
     protected int _bonusPoints;
     protected int _amountCompleted;
     protected int _target;
-    public CheckListGoal(string name, string description, int points, int target, int bonusPoints, int amountCompleted)
+    public CheckListGoal(string name, string description, int points, int bonusPoints, int target, int amountCompleted)
     : base(name, description, points)
     {
         _bonusPoints = bonusPoints;

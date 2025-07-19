@@ -15,7 +15,7 @@ public class GoalManager
 
     private string ObtainFileName(string prompt)
     {
-        Console.WriteLine($"Enter the filename to {prompt}: ");
+        Console.Write($"Enter the filename to {prompt}: ");
         return Console.ReadLine();
     }
 
@@ -59,7 +59,7 @@ public class GoalManager
                 outputFile.WriteLine($"{goal.GetStringRepresentation()}");
             }
         }
-        Console.WriteLine($"Goals saved to {_filename}");
+        Console.WriteLine($"\nGoals saved to {_filename}");
     }
 
     public void LoadGoals()
@@ -111,22 +111,22 @@ public class GoalManager
                 string name = goalParts[0];
                 string description = goalParts[1];
                 int points = int.Parse(goalParts[2]);
-                int amountCompleted = int.Parse(goalParts[3]);
+                int bonusPoints = int.Parse(goalParts[3]);
                 int target = int.Parse(goalParts[4]);
-                int bonusPoints = int.Parse(goalParts[5]);
-                loadedGoal = new CheckListGoal(name, description, points, target, bonusPoints, amountCompleted);
+                int amountCompleted = int.Parse(goalParts[5]);
+                loadedGoal = new CheckListGoal(name, description, points, bonusPoints, target, amountCompleted);
             }
 
             _goals.Add(loadedGoal);
 
         }
-        Console.WriteLine($"Successfully loaded {_goals.Count} goals from {fileToLoad}");
+        Console.WriteLine($"\nSuccessfully loaded {_goals.Count} goals from {fileToLoad}");
     }
 
     public void RecordEvent()
     {
         DisplayGoals();
-        Console.WriteLine("Which goal did you accomplish? ");
+        Console.Write("Which goal did you accomplish? ");
         int input = int.Parse(Console.ReadLine());
 
 
@@ -135,8 +135,6 @@ public class GoalManager
         int goalPoint = selectedGoal.RecordEvent();
 
         _totalScore += goalPoint;
-
-        DisplayScore();
     }
 
    
