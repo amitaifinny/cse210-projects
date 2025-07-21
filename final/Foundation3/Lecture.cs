@@ -11,7 +11,7 @@ public class Lecture : Event
         _capacity = capacity;
     }
 
-    public string DisplayLectureDescription()
+    public override string GetFullDetails()
     {
         return $"{ListStandardDetails()}\nEvent: Lecture\nSpeaker: {_speaker}\nCapacity: {_capacity}";
     }
