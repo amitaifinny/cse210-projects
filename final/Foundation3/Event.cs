@@ -19,7 +19,10 @@ public abstract class Event
 
     public abstract string ListShortDetails();
 
-    public abstract string GetFullDetails();
+    public virtual string GetFullDetails()
+    {
+        return ListStandardDetails();
+    }
     public string ListStandardDetails()
     {
         return $"{_title}\n{_description}\nWhen: {_date} at {_time}\nLocation: {_address.GetAddressRepresentation()}";
