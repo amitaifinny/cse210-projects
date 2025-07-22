@@ -9,6 +9,8 @@ public abstract class Activity
         _lengthInMinutes = lengthInMinutes;
     }
 
+
+
     public abstract double CalculateDistance();
     public abstract double CalculateSpeed();
     public abstract double CalculatePace();
@@ -36,7 +38,7 @@ public abstract class Activity
     public virtual string GetSummary()
     {
         string activityType = this.GetType().Name;
-        return $"{_date} {activityType}({_lengthInMinutes})- Distance: {CalculateDistance():F1} miles, Speed {CalculateSpeed():F1} mph, Pace: {CalculatePace():F1} min per mile.";
+        return $"{_date} {activityType}({_lengthInMinutes} min)- Distance: {CalculateDistance():F1} miles, Speed {CalculateSpeed():F1} mph, Pace: {CalculatePace():F1} min per mile.";
     }
     
 
